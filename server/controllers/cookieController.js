@@ -12,7 +12,7 @@ cookieController.checkForCookie = (req, res, next) => {
     res.locals.sessionUser = decoded.username;
     console.log(res.locals.sessionUser);
   }
-  // else console.log('no cookie found');
+  else console.log('no cookie found');
   next();
 };
 

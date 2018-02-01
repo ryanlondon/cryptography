@@ -9,6 +9,7 @@ CREATE TABLE "users" (
 	"paid_account" BOOLEAN NOT NULL DEFAULT 'false',
 	"created_at" TIMESTAMP NOT NULL DEFAULT NOW(),
 	"last_active" TIMESTAMP NOT NULL,
+	"email" varchar(255),
 	CONSTRAINT users_pk PRIMARY KEY ("_id")
 ) WITH (
   OIDS=FALSE
@@ -24,9 +25,11 @@ CREATE TABLE "exchanges" (
 );
 
 CREATE TABLE "users_exchanges" (
+	"_id" serial NOT NULL,
 	"user_id" serial NOT NULL,
 	"exchange_id" serial NOT NULL,
-	"token" varchar(255) NOT NULL
+	"api_key" varchar(255) NOT NULL,
+	"api_secret" varchar(255) NOT NULL,
 ) WITH (
   OIDS=FALSE
 );

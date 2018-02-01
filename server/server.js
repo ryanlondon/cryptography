@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use(express.static(path.resolve(__dirname, '../build')));
-app.all(cookieController.checkForCookie);
+app.use(cookieController.checkForCookie);
 
 app.post('/api/login',
   authController.getUser,
